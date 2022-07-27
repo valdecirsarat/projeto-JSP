@@ -84,6 +84,13 @@ public class ModelLogin implements Serializable {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	@Override
+	public String toString() {
+		return  String.format(" \tid: %d nome: %s  email: %s  login: %s \n" , id ,nome, email, login);
+	}
+	
+	
 	
 	
 }

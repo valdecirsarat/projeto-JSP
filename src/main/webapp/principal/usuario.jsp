@@ -87,20 +87,17 @@
 
 															<button type="button" class="btn btn-primary waves-effect waves-light" onclick="limparForm()">Novo</button>
 															<button class="btn btn-success waves-effect waves-light">Salvar</button>
-															<button type="button" class="btn btn-info waves-effect waves-light" onclick="criarDelete()">Excluir</button>
-
+															<button type="button" class="btn btn-danger waves-effect waves-light" onclick="deletarAjax()">Excluir</button>
+															<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalUsuario">Buscar</button>
 														</form>
 
 													</div>
 												</div>
 											</div>
 										</div>
-										<span id="teste"> ${msg}</span>
+										<span id="msg"> ${msg}</span>
 										
-										<!-- fechado para nao ficar aparecendo toda hora
 										
-											<jsp:include page="modal.jsp"></jsp:include>
-										 -->
 										
 									</div>
 
@@ -116,18 +113,22 @@
 	</div>
 
 
-	<jsp:include page="javaScriptFile.jsp"></jsp:include>
+<jsp:include page="javaScriptFile.jsp"></jsp:include>
+
+<jsp:include page="modal.jsp"></jsp:include>
+	
+	
 	<script type="text/javascript">
 		function limparForm(){
 			var form = document.getElementById("formUser");
 			var input = form.getElementsByTagName('input');
-			/* forma mais trabalhosa
+		// forma mais trabalhosa
 			for(i = 0; i < form.length; i++){
 				form[i].value ="";				
 			}			
-			*/
+			
 			//forma simples
-			form.reset();
+			//form.reset();
 		}
 		
 		
@@ -135,18 +136,38 @@
 			
 			if(confirm("Deseja realmente excluir os dados?")){
 				var acao = document.getElementById("acao");
-				var form = document.getElementById("formUser");
-				
+				var form = document.getElementById("formUser");				
 				form.method = 'get';
-				acao.value ="deletar";
-				
-				form.submit();
-				
-			}
-
-			
+				acao.value ="deletar";				
+				form.submit();				
+			}		
 		}
-	
+		
+		
+		// DELETE POR AJAX 
+		
+		function deletarAjax(){
+			if(confirm("Deseja realmente excluir os dados?")){
+			var urlAction = document.getElementById("formUser").action;
+			var idUser = document.getElementById("id").value;
+			
+			$.ajax({
+				
+				method: "get",
+				url: urlAction,
+				data: "id=" + idUser + "&acao=deletarAjax",
+				success: function(response){
+					limparForm();
+					document.getElementById("msg").textContent = response;
+				} 
+				
+			}).fail(function(xhr, status, errorThrown){
+				alert("Erro ao deletar usuário por ID: " + xhr.responseText);
+			})
+			
+			}
+		}
+		
 	
 	</script>
 </body>
