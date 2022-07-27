@@ -34,6 +34,8 @@ body {
   font-family: "Roboto", sans-serif;
   background-attachment: fixed;
   background-image: linear-gradient(rgba(255, 255, 255, 0.2) 177px, rgba(255, 255, 255, 0.9) 18.6%); }
+  
+
 
 ul {
   padding-left: 0;
@@ -10357,6 +10359,7 @@ body.menu-bottom #collapse-menu {
 .form-material .form-group {
   position: relative; }
   .form-material .form-group.form-static-label .form-control ~ .float-label {
+   	color: #000000;
     top: -14px;
     font-size: 11px; }
 .form-material .form-control {
@@ -10464,7 +10467,7 @@ body.menu-bottom #collapse-menu {
 .form-material .form-primary .form-control:focus ~ .form-bar:after, .form-material .form-primary .form-control:focus ~ .form-bar:before {
   background: #448aff; }
 .form-material .form-primary.form-static-label .float-label {
-  color: #448aff; }
+  color: #000000; }
 .form-material .form-primary.form-static-label .form-control {
   border-bottom-color: #448aff; }
 .form-material .material-group-primary .material-addone i, .form-material .material-group-primary .material-addone span {
@@ -10480,11 +10483,11 @@ body.menu-bottom #collapse-menu {
 .form-material .material-group-warning .material-addone i, .form-material .material-group-warning .material-addone span {
   color: #ffe100; }
 .form-material .form-default .form-control:focus ~ label {
-  color: #d6d6d6; }
+  color: #000000; }
 .form-material .form-default .form-control:focus ~ .form-bar:after, .form-material .form-default .form-control:focus ~ .form-bar:before {
   background: #d6d6d6; }
 .form-material .form-default.form-static-label .float-label {
-  color: #d6d6d6; }
+  color: #000000; }
 .form-material .form-default.form-static-label .form-control {
   border-bottom-color: #d6d6d6; }
 .form-material .material-group-default .material-addone i, .form-material .material-group-default .material-addone span {
@@ -10514,7 +10517,7 @@ body.menu-bottom #collapse-menu {
 .form-material .form-inverse .form-control:focus ~ .form-bar:after, .form-material .form-inverse .form-control:focus ~ .form-bar:before {
   background: #37474f; }
 .form-material .form-inverse.form-static-label .float-label {
-  color: #37474f; }
+  color: #000000; }
 .form-material .form-inverse.form-static-label .form-control {
   border-bottom-color: #37474f; }
 .form-material .material-group-inverse .material-addone i, .form-material .material-group-inverse .material-addone span {
@@ -10524,7 +10527,7 @@ body.menu-bottom #collapse-menu {
 .form-material .form-info .form-control:focus ~ .form-bar:after, .form-material .form-info .form-control:focus ~ .form-bar:before {
   background: #00bcd4; }
 .form-material .form-info.form-static-label .float-label {
-  color: #00bcd4; }
+  color: #000000; }
 .form-material .form-info.form-static-label .form-control {
   border-bottom-color: #00bcd4; }
 .form-material .material-group-info .material-addone i, .form-material .material-group-info .material-addone span {
